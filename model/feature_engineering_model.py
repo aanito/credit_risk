@@ -107,11 +107,18 @@ def main(file_path, output_path):
     save_data(aggregate_features, output_path)
     print("Feature engineering pipeline executed successfully.")
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run Feature Engineering Pipeline")
-    parser.add_argument("file_path", type=str, help="Path to the input dataset")
-    parser.add_argument("output_path", type=str, help="Path to save the processed dataset")
+    parser.add_argument("--file_path", type=str, required=True, help="Path to the input dataset")
+    parser.add_argument("--output_path", type=str, required=True, help="Path to save the processed dataset")
     args = parser.parse_args()
 
     main(args.file_path, args.output_path)
+
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser(description="Run Feature Engineering Pipeline")
+#     parser.add_argument("file_path", type=str, help="Path to the input dataset")
+#     parser.add_argument("output_path", type=str, help="Path to save the processed dataset")
+#     args = parser.parse_args()
+
+#     main(args.file_path, args.output_path)
